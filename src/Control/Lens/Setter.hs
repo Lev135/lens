@@ -56,7 +56,7 @@ module Control.Lens.Setter
   , passing
   , censoring
   -- ** Reader combinators
-  , locally, ilocally
+  , locally
   -- ** Arrow combinator
   , assignA
   -- * Combinators for indexed setters
@@ -69,6 +69,7 @@ module Control.Lens.Setter
   , imodifying, (%@=), (.@=)
   , ipassing
   , icensoring
+  , ilocally
   -- * Rank-1 representation
   , ASetter, ASetter'
   , AnIndexedSetter, AnIndexedSetter'
