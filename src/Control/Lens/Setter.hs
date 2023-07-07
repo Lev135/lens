@@ -34,7 +34,7 @@ module Control.Lens.Setter
     Setter, Setter'
   , IndexedSetter, IndexedSetter'
   -- * Building setters
-  , sets, setting
+  , setting
   -- * Using setters
   , over, set
   -- * Common setters
@@ -61,7 +61,7 @@ module Control.Lens.Setter
   , assignA
   -- * Combinators for indexed setters
   -- ** Building an indexed setter
-  , isets
+  , isets, sets
   -- ** Basic usage
   , iover, iset
   -- ** Combinators and operators
