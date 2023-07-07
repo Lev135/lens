@@ -58,7 +58,7 @@ module Control.Lens.Setter
   -- * Simplified State Setting
   , set'
   -- * Indexed Setters
-  , imapOf, iover, iset, imodifying
+  , iover, iset, imodifying
   , isets
   , (%@~), (.@~), (%@=), (.@=)
   -- * Arrow operators
@@ -74,7 +74,7 @@ module Control.Lens.Setter
   , Settable
   , Identity(..)
   -- * Deprecated
-  , mapOf
+  , imapOf, mapOf
   ) where
 
 import Prelude ()
