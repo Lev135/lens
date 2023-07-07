@@ -43,6 +43,7 @@ module Control.Lens.Setter
   , argument
   -- * Additional combinators and operators
   -- ** Functional combinators
+  , set'
   , (.~), (%~)
   , (+~), (-~), (*~), (//~), (^~), (^^~), (**~), (||~), (<>~), (&&~), (<.~), (?~), (<?~)
   -- ** State combinators
@@ -56,8 +57,6 @@ module Control.Lens.Setter
   , censoring, icensoring
   -- ** Reader combinators
   , locally, ilocally
-  -- ** Simplified state setting
-  , set'
   -- ** Arrow combinator
   , assignA
   -- * Combinators for indexed setters
