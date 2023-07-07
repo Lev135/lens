@@ -30,39 +30,40 @@
 ----------------------------------------------------------------------------
 module Control.Lens.Setter
   (
-  -- * Setters
+  -- * Types
     Setter, Setter'
   , IndexedSetter, IndexedSetter'
-  -- * Building Setters
+  -- * Building setters
   , sets, setting
-  -- * Common Setters
+  -- * Using setters
+  , over, set
+  -- * Common setters
   , mapped, lifted
   , contramapped
   , argument
-  -- * Functional Combinators
-  , over
-  , set
+  -- * Additional combinators and operators
+  -- ** Functional combinators
   , (.~), (%~)
   , (+~), (-~), (*~), (//~), (^~), (^^~), (**~), (||~), (<>~), (&&~), (<.~), (?~), (<?~)
-  -- * State Combinators
+  -- ** State combinators
   , assign, modifying
   , (.=), (%=)
   , (+=), (-=), (*=), (//=), (^=), (^^=), (**=), (||=), (<>=), (&&=), (<.=), (?=), (<?=)
   , (<~)
-  -- * Writer Combinators
+  -- ** Writer combinators
   , scribe
   , passing, ipassing
   , censoring, icensoring
-  -- * Reader Combinators
+  -- ** Reader combinators
   , locally, ilocally
-  -- * Simplified State Setting
+  -- ** Simplified state setting
   , set'
-  -- * Indexed Setters
+  -- ** Arrow combinator
+  , assignA
+  -- * Combinators for indexed setters
   , iover, iset, imodifying
   , isets
   , (%@~), (.@~), (%@=), (.@=)
-  -- * Arrow operators
-  , assignA
   -- * Rank-1 representation
   , ASetter, ASetter'
   , AnIndexedSetter, AnIndexedSetter'
