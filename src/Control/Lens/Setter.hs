@@ -53,16 +53,22 @@ module Control.Lens.Setter
   , (<~)
   -- ** Writer combinators
   , scribe
-  , passing, ipassing
-  , censoring, icensoring
+  , passing
+  , censoring
   -- ** Reader combinators
   , locally, ilocally
   -- ** Arrow combinator
   , assignA
   -- * Combinators for indexed setters
-  , iover, iset, imodifying
+  -- ** Building an indexed setter
   , isets
-  , (%@~), (.@~), (%@=), (.@=)
+  -- ** Basic usage
+  , iover, iset
+  -- ** Combinators and operators
+  , (%@~), (.@~)
+  , imodifying, (%@=), (.@=)
+  , ipassing
+  , icensoring
   -- * Rank-1 representation
   , ASetter, ASetter'
   , AnIndexedSetter, AnIndexedSetter'
