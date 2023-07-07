@@ -33,14 +33,8 @@ module Control.Lens.Setter
   -- * Setters
     Setter, Setter'
   , IndexedSetter, IndexedSetter'
-  , ASetter, ASetter'
-  , AnIndexedSetter, AnIndexedSetter'
-  , Setting, Setting'
   -- * Building Setters
   , sets, setting
-  , cloneSetter
-  , cloneIndexPreservingSetter
-  , cloneIndexedSetter
   -- * Common Setters
   , mapped, lifted
   , contramapped
@@ -69,6 +63,13 @@ module Control.Lens.Setter
   , (%@~), (.@~), (%@=), (.@=)
   -- * Arrow operators
   , assignA
+  -- * Rank-1 representation
+  , ASetter, ASetter'
+  , AnIndexedSetter, AnIndexedSetter'
+  , Setting, Setting'
+  , cloneSetter
+  , cloneIndexPreservingSetter
+  , cloneIndexedSetter
   -- * Exported for legible error messages
   , Settable
   , Identity(..)
