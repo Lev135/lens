@@ -124,40 +124,24 @@ infixr 2 <~
 -- Setters
 ------------------------------------------------------------------------------
 
--- | Running a 'Setter' instantiates it to a concrete type.
---
--- When consuming a setter directly to perform a mapping, you can use this type, but most
--- user code will not need to use this type.
+-- | When you see this as an argument to a function, it expects a 'Setter'.
 type ASetter s t a b = (a -> Identity b) -> s -> Identity t
 
--- | This is a useful alias for use when consuming a 'Setter''.
---
--- Most user code will never have to use this type.
---
--- @
--- type 'ASetter'' = 'Simple' 'ASetter'
--- @
+-- | When you see this as an argument to a function, it expects a 'Setter''.
 type ASetter' s a = ASetter s s a a
 
--- | Running an 'IndexedSetter' instantiates it to a concrete type.
---
--- When consuming a setter directly to perform a mapping, you can use this type, but most
--- user code will not need to use this type.
+-- | When you see this as an argument to a function, it expects an 'IndexedSetter'
 type AnIndexedSetter i s t a b = Indexed i a (Identity b) -> s -> Identity t
 
--- | @
--- type 'AnIndexedSetter'' i = 'Simple' ('AnIndexedSetter' i)
--- @
+-- | When you see this as an argument to a function, it expects an 'IndexedSetter''
 type AnIndexedSetter' i s a = AnIndexedSetter i s s a a
 
--- | This is a convenient alias when defining highly polymorphic code that takes both
--- 'ASetter' and 'AnIndexedSetter' as appropriate. If a function takes this it is
--- expecting one of those two things based on context.
+-- | When you see this as an argument to a function, it expects either 'Setter'
+-- or 'IndexedSetter'
 type Setting p s t a b = p a (Identity b) -> s -> Identity t
 
--- | This is a convenient alias when defining highly polymorphic code that takes both
--- 'ASetter'' and 'AnIndexedSetter'' as appropriate. If a function takes this it is
--- expecting one of those two things based on context.
+-- | When you see this as an argument to a function, it expects either 'Setter''
+-- or 'IndexedSetter''
 type Setting' p s a = Setting p s s a a
 
 -----------------------------------------------------------------------------
