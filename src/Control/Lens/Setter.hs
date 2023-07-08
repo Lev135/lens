@@ -776,10 +776,6 @@ l .= b = State.modify (l .~ b)
 -- ('%=') :: 'MonadState' s m => 'Traversal'' s a -> (a -> a) -> m ()
 -- ('%=') :: 'MonadState' s m => 'Setter'' s a    -> (a -> a) -> m ()
 -- @
---
--- @
--- ('%=') :: 'MonadState' s m => 'ASetter' s s a b -> (a -> b) -> m ()
--- @
 (%=) :: MonadState s m => ASetter s s a b -> (a -> b) -> m ()
 l %= f = State.modify (l %~ f)
 {-# INLINE (%=) #-}
