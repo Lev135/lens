@@ -1108,7 +1108,7 @@ icensoring l uv = censor (iover l uv)
 --
 -- @
 -- 'locally' l 'id' a ≡ a
--- 'locally' l f '.' locally l g ≡ 'locally' l (f '.' g)
+-- 'locally' l f '.' 'locally' l g ≡ 'locally' l (f '.' g)
 -- @
 --
 -- >>> (1,1) & locally _1 (+1) (uncurry (+))
@@ -1118,10 +1118,10 @@ icensoring l uv = censor (iover l uv)
 -- "Hello, world!"
 --
 -- @
--- locally :: MonadReader s m => 'Iso' s s a b       -> (a -> b) -> m r -> m r
--- locally :: MonadReader s m => 'Lens' s s a b      -> (a -> b) -> m r -> m r
--- locally :: MonadReader s m => 'Traversal' s s a b -> (a -> b) -> m r -> m r
--- locally :: MonadReader s m => 'Setter' s s a b    -> (a -> b) -> m r -> m r
+-- locally :: 'MonadReader' s m => 'Iso' s s a b       -> (a -> b) -> m r -> m r
+-- locally :: 'MonadReader' s m => 'Lens' s s a b      -> (a -> b) -> m r -> m r
+-- locally :: 'MonadReader' s m => 'Traversal' s s a b -> (a -> b) -> m r -> m r
+-- locally :: 'MonadReader' s m => 'Setter' s s a b    -> (a -> b) -> m r -> m r
 -- @
 locally :: MonadReader s m => ASetter s s a b -> (a -> b) -> m r -> m r
 locally l f = Reader.local (over l f)
@@ -1132,14 +1132,14 @@ locally l f = Reader.local (over l f)
 -- 'Setter', 'Lens', or 'Traversal'.
 --
 -- @
--- 'locally' l f ≡ 'ilocally' l f . const
+-- 'locally' l f ≡ 'ilocally' l f . 'const'
 -- 'ilocally' l f ≡ 'locally' l f . 'Indexed'
 -- @
 --
 -- @
--- ilocally :: MonadReader s m => 'IndexedLens' s s a b      -> (i -> a -> b) -> m r -> m r
--- ilocally :: MonadReader s m => 'IndexedTraversal' s s a b -> (i -> a -> b) -> m r -> m r
--- ilocally :: MonadReader s m => 'IndexedSetter' s s a b    -> (i -> a -> b) -> m r -> m r
+-- ilocally :: 'MonadReader' s m => 'IndexedLens' s s a b      -> (i -> a -> b) -> m r -> m r
+-- ilocally :: 'MonadReader' s m => 'IndexedTraversal' s s a b -> (i -> a -> b) -> m r -> m r
+-- ilocally :: 'MonadReader' s m => 'IndexedSetter' s s a b    -> (i -> a -> b) -> m r -> m r
 -- @
 ilocally :: MonadReader s m => AnIndexedSetter i s s a b -> (i -> a -> b) -> m r -> m r
 ilocally l f = Reader.local (iover l f)
