@@ -136,12 +136,12 @@ type AnIndexedSetter i s t a b = Indexed i a (Identity b) -> s -> Identity t
 -- | When you see this as an argument to a function, it expects an 'IndexedSetter''
 type AnIndexedSetter' i s a = AnIndexedSetter i s s a a
 
--- | When you see this as an argument to a function, it expects either 'Setter'
--- or 'IndexedSetter'
+-- | When you see this as an argument to a function, it expects either a 'Setter'
+-- or an 'IndexedSetter'
 type Setting p s t a b = p a (Identity b) -> s -> Identity t
 
--- | When you see this as an argument to a function, it expects either 'Setter''
--- or 'IndexedSetter''
+-- | When you see this as an argument to a function, it expects either a 'Setter''
+-- or an 'IndexedSetter''
 type Setting' p s a = Setting p s s a a
 
 -----------------------------------------------------------------------------
