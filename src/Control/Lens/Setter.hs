@@ -360,9 +360,6 @@ over = coerce
 -- >>> set mapped () [1,2,3,4]
 -- [(),(),(),()]
 --
--- Note: Attempting to 'set' a 'Fold' or 'Getter' will fail at compile time with an
--- relatively nice error message.
---
 -- @
 -- 'set' :: 'Setter' s t a b    -> b -> s -> t
 -- 'set' :: 'Iso' s t a b       -> b -> s -> t
@@ -386,9 +383,6 @@ set l b = runIdentity #. l (\_ -> Identity b)
 --
 -- >>> set' mapped 0 [1,2,3,4]
 -- [0,0,0,0]
---
--- Note: Attempting to adjust 'set'' a 'Fold' or 'Getter' will fail at compile time with an
--- relatively nice error message.
 --
 -- @
 -- 'set'' :: 'Setter'' s a    -> a -> s -> s
