@@ -338,8 +338,10 @@ cloneIndexedSetter l pafb = taintedDot (runIdentity #. l (Indexed $ \i -> Identi
 -- ("10",20)
 --
 -- @
--- 'over' :: 'Setter' s t a b -> (a -> b) -> s -> t
--- 'over' :: 'ASetter' s t a b -> (a -> b) -> s -> t
+-- 'over' :: 'Setter' s t a b    -> (a -> b) -> s -> t
+-- 'over' :: 'Iso' s t a b       -> (a -> b) -> s -> t
+-- 'over' :: 'Lens' s t a b      -> (a -> b) -> s -> t
+-- 'over' :: 'Traversal' s t a b -> (a -> b) -> s -> t
 -- @
 over :: ASetter s t a b -> (a -> b) -> s -> t
 over = coerce
