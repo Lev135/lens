@@ -435,7 +435,7 @@ set' l b = runIdentity #. l (\_ -> Identity b)
 -- | Replace the target of a 'Lens' or all of the targets of a 'Setter'
 -- or 'Traversal' with a constant value.
 --
--- This is an infix version of 'set', provided for consistency with ('.=').
+-- This is an infix version of 'set'.
 --
 -- @
 -- f '<$' a ≡ 'mapped' '.~' f '$' a
