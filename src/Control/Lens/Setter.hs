@@ -32,7 +32,6 @@ module Control.Lens.Setter
   (
   -- * Types
     Setter, Setter'
-  , IndexedSetter, IndexedSetter'
   -- * Building setters
   , setting
   -- * Using setters
@@ -61,7 +60,9 @@ module Control.Lens.Setter
   , locally
   -- ** Arrow combinator
   , assignA
-  -- * Combinators for indexed setters
+  -- * Indexed setters
+  -- ** Types
+  , IndexedSetter, IndexedSetter'
   -- ** Building an indexed setter
   , isets, sets
   -- ** Basic usage
