@@ -262,7 +262,7 @@ argument = sets lmap
 -- 'over' '.' 'setting' ≡ 'id'
 -- @
 --
--- Another way to view 'sets' is that it takes a \"semantic editor combinator\"
+-- Another way to view 'setting' is that it takes a \"semantic editor combinator\"
 -- and transforms it into a 'Setter'.
 --
 -- @
