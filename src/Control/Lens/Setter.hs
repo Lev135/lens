@@ -970,6 +970,9 @@ l ||= b = State.modify (l ||~ b)
 -- @
 --
 -- will store the result in a 'Lens', 'Setter', or 'Traversal'.
+--
+-- Note that though it looks like a pass-through operator and pure ('.~'), ('%~')
+-- operators it's unrelated to both of them.
 (<~) :: MonadState s m => ASetter s s a b -> m b -> m ()
 l <~ mb = mb >>= (l .=)
 {-# INLINE (<~) #-}
