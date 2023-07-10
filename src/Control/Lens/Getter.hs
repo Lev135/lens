@@ -53,29 +53,33 @@
 -------------------------------------------------------------------------------
 module Control.Lens.Getter
   (
-  -- * Getters
-    Getter, IndexedGetter
-  , Getting, IndexedGetting
-  , Accessing
-  -- * Building Getters
+  -- * Type
+    Getter
+  -- * Building getters
   , to
-  , ito
   , like
-  , ilike
-  -- * Combinators for Getters and Folds
+  -- * Combinators for getters and folds
   , (^.)
   , view, views
   , use, uses
   , listening, listenings
-  -- * Indexed Getters
-  -- ** Indexed Getter Combinators
+  , getting
+  -- * Indexed getters
+  -- ** Type
+  , IndexedGetter
+  -- ** Building indexed getters
+  , ito
+  , ilike
+  -- ** Indexed getter combinators
   , (^@.)
   , iview, iviews
   , iuse, iuses
   , ilistening, ilistenings
-  -- * Implementation Details
+  -- * Rank-1 representation
+  , Getting, IndexedGetting
+  , Accessing
+  -- * Exported for legible error messages
   , Contravariant(..)
-  , getting
   , Const(..)
   ) where
 
