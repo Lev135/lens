@@ -32,21 +32,25 @@ module Control.Lens.Setter
   (
   -- * Types
     Setter, Setter'
+
   -- * Building setters
   , setting
+
   -- * Using setters
   , over, set
+
   -- * Common setters
   , mapped, lifted
   , contramapped
   , argument
+
   -- * Additional combinators and operators
-  -- ** Functional combinators
+  -- ** Functional combinators #FunctionalCombinators#
   , set'
   , (.~), (%~), (?~)
   , (+~), (-~), (*~), (//~), (^~), (^^~), (**~), (||~), (<>~), (&&~)
   , (<.~), (<?~)
-  -- ** State combinators
+  -- ** State combinators #StateCombinators#
   , assign, modifying
   , (<~)
   , (.=), (%=), (?=)
@@ -60,6 +64,7 @@ module Control.Lens.Setter
   , locally
   -- ** Arrow combinator
   , assignA
+
   -- * Indexed setters
   -- ** Types
   , IndexedSetter, IndexedSetter'
@@ -67,12 +72,13 @@ module Control.Lens.Setter
   , isets, sets
   -- ** Basic usage
   , iover, iset
-  -- ** Combinators and operators
+  -- ** Combinators and operators #IndexedCombinators#
   , (%@~), (.@~)
   , imodifying, (%@=), (.@=)
   , ipassing
   , icensoring
   , ilocally
+
   -- * Rank-1 representation
   , ASetter, ASetter'
   , AnIndexedSetter, AnIndexedSetter'
@@ -80,9 +86,11 @@ module Control.Lens.Setter
   , cloneSetter
   , cloneIndexPreservingSetter
   , cloneIndexedSetter
+
   -- * Exported for legible error messages
   , Settable
   , Identity(..)
+
   -- * Deprecated
   , imapOf, mapOf
   ) where

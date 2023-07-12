@@ -62,37 +62,41 @@
 -------------------------------------------------------------------------------
 module Control.Lens.Lens
   (
-  -- * Lenses
+  -- * Types
     Lens, Lens'
-  , IndexedLens, IndexedLens'
-  -- ** Concrete Lenses
-  , ALens, ALens'
-  , AnIndexedLens, AnIndexedLens'
+
+  -- * Building lenses
+  , lens
+
+  -- * Using lenses
+  -- | Since lenses are getters and setters you can apply
+  -- 'Control.Lens.Getter.view', 'Control.Lens.Setter.set'
+  -- and 'Control.Lens.Setter.over' to them.
+  , withLens
+
+  -- * Common lenses
+  , devoid
+  , united
+  , head1, last1
 
   -- * Combinators
-  , lens, ilens, iplens, withLens
-  , (%%~), (%%=)
-  , (%%@~), (%%@=)
-  , (<%@~), (<%@=)
-  , (<<%@~), (<<%@=)
-  -- ** General Purpose Combinators
+  -- ** General purpose combinators
   , (&), (<&>), (??)
   , (&~)
-  -- * Lateral Composition
-  , choosing
-  , chosen
-  , alongside
-  , inside
-
-  -- * Setting Functionally with Passthrough
+  -- ** Functional combinators
+  -- | See also combinators from "Control.Lens.Setter#g:FunctionalCombinators"
+  -- and "Control.Lens.Getter#g:Combinators"
+  , (%%~)
   , (<%~), (<+~), (<-~), (<*~), (<//~)
   , (<^~), (<^^~), (<**~)
   , (<||~), (<&&~), (<<>~)
   , (<<%~), (<<.~), (<<?~), (<<+~), (<<-~), (<<*~)
   , (<<//~), (<<^~), (<<^^~), (<<**~)
   , (<<||~), (<<&&~), (<<<>~)
-
-  -- * Setting State with Passthrough
+  -- ** State combinators
+  -- | See also combinators from "Control.Lens.Setter#g:StateCombinators" and
+  -- "Control.Lens.Getter#g:Combinators"
+  , (%%=)
   , (<%=), (<+=), (<-=), (<*=), (<//=)
   , (<^=), (<^^=), (<**=)
   , (<||=), (<&&=), (<<>=)
@@ -100,33 +104,56 @@ module Control.Lens.Lens
   , (<<//=), (<<^=), (<<^^=), (<<**=)
   , (<<||=), (<<&&=), (<<<>=)
   , (<<~)
+  -- ** Arrow combinator
+  -- | See also Control.Lens.Setter.assignA
+  , overA
+  -- ** Lateral composition
+  , choosing
+  , chosen
+  , alongside
+  , inside
+  -- ** Lens fusion
+  , fusing
 
-  -- * Cloning Lenses
+  -- * Indexed lenses
+  -- * Types
+  , IndexedLens, IndexedLens'
+  -- ** Building indexed lenses
+  , ilens, iplens
+  -- ** Basic usage
+  -- | Since indexed lenses are indexed getters and setters, you can apply
+  -- 'Control.Lens.Getter.iview', 'Control.Lens.Setter.iset' and
+  -- 'Control.Lens.Setter.iover' to them.
+
+  -- ** Combinators for indexed lenses
+  -- | See also combinators from "Control.Lens.Setter#g:IndexedCombinators"
+  -- and "Control.Lens.Getter#g:IndexedCombinators"
+
+  -- *** Functional combinators
+  , (%%@~)
+  , (<%@~)
+  , (<<%@~)
+  -- *** State combinators
+  , (%%@=)
+  , (<%@=)
+  , (<<%@=)
+
+  -- * Rank-1 representation
+  , ALens, ALens'
+  , AnIndexedLens, AnIndexedLens'
   , cloneLens
   , cloneIndexPreservingLens
   , cloneIndexedLens
-
-  -- * Arrow operators
-  , overA
-
-  -- * ALens Combinators
+  , locus
+  -- ** ALens combinators
   , storing
   , (^#)
   , (#~), (#%~), (#%%~), (<#~), (<#%~)
   , (#=), (#%=), (#%%=), (<#=), (<#%=)
 
-  -- * Common Lenses
-  , devoid
-  , united
-  , head1, last1
-
-  -- * Context
+  -- * Exported for legible error messages
   , Context(..)
   , Context'
-  , locus
-
-  -- * Lens fusion
-  , fusing
   ) where
 
 import Prelude ()
