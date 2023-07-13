@@ -19,22 +19,19 @@
 -------------------------------------------------------------------------------
 module Control.Lens.Prism
   (
-  -- * Prisms
+  -- * Types
     Prism, Prism'
-  , APrism, APrism'
-  -- * Constructing Prisms
+
+  -- * Building prisms
   , prism
   , prism'
-  -- * Consuming Prisms
-  , withPrism
-  , clonePrism
-  , outside
-  , aside
-  , without
-  , below
-  , isn't
+
+  -- * Using prisms
   , matching
   , matching'
+  , isn't
+  , withPrism
+
   -- * Common Prisms
   , _Left
   , _Right
@@ -46,7 +43,18 @@ module Control.Lens.Prism
   , nearly
   , Prefixed(..)
   , Suffixed(..)
-  -- * Prismatic profunctors
+
+  -- * Additional combinators
+  , outside
+  , aside
+  , without
+  , below
+
+  -- * Rank-1 representation
+  , APrism, APrism'
+  , clonePrism
+
+  -- * Exported for legible error messages
   , Choice(..)
   ) where
 
